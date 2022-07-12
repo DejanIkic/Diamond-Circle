@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" styleClass="container" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unibl.etf.controller.HomePageController">
+   <children>
+      <VBox alignment="CENTER" layoutX="-6.0" minWidth="300.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefWidth="250.0">
+               <children>
+                  <Label text="Dimenzije">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Baskerville Old Face" size="18.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="dimensionChoiceBox" prefWidth="150.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="250.0">
+               <children>
+                  <Label text="Broj igrača">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Baskerville Old Face" size="18.0" />
+                     </font></Label>
+                  <ChoiceBox fx:id="numberOfPlayers" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <Button fx:id="startButton" mnemonicParsing="false" onAction="#onMouseClicked" prefHeight="25.0" prefWidth="134.0" text="START">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="65.0" prefWidth="800.0" text="DiamondCircle">
+         <font>
+            <Font name="Baskerville Old Face" size="30.0" />
+         </font>
+         <padding>
+            <Insets top="30.0" />
+         </padding>
+      </Label>
+   </children>
+</AnchorPane>

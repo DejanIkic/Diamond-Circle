@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unibl.etf.controller.SimulationController">
+   <children>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1000.0" spacing="120.0" style="-fx-border-color: BLACK;" AnchorPane.bottomAnchor="700.0">
+         <children>
+            <Label fx:id="currentNOPlayedGames" alignment="CENTER" text="Trenutan broj odigranih igara: 10" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <Label alignment="CENTER" contentDisplay="CENTER" text="DiamondCircle" textAlignment="CENTER">
+               <font>
+                  <Font name="Baskerville Old Face" size="40.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Label>
+            <Button fx:id="stopResumeButton" alignment="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="173.0" text="Pokreni/Zaustavi" HBox.hgrow="NEVER">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="listOfPlayers" alignment="CENTER" layoutY="100.0" prefWidth="1000.0" spacing="30.0" style="-fx-border-color: BLACK; -fx-background-color: #aaa;" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
+         <children>
+            <Label text="Igrac 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Igrac 2">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Igrac 3">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Igrac 4">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox fx:id="figuresVBox" layoutY="156.0" prefWidth="250.0" spacing="3.0" style="-fx-background-color: ccc;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="160.0">
+         <children>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+            <Button depthTest="DISABLE" graphicTextGap="0.0" maxHeight="25.0" mnemonicParsing="false" prefHeight="25.0" text="Player 1 Figure 1">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="3.0" left="5.0" right="5.0" top="3.0" />
+               </padding>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <Pane layoutX="740.0" layoutY="160.0" prefHeight="370.0" prefWidth="250.0" style="-fx-background-color: #f1f1f1;" AnchorPane.leftAnchor="740.0" AnchorPane.topAnchor="160.0">
+         <children>
+            <Label layoutX="54.0" layoutY="33.0" text="Trenutna karta">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="cardImageView" fitHeight="234.0" fitWidth="200.0" layoutX="45.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/zmajOdSipova.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="timeSinceStartOfGame" layoutX="767.0" layoutY="550.0" prefHeight="30.0" style="-fx-background-color: #ab9;" text="Vrijeme trajanja igre: 10s" textAlignment="CENTER" AnchorPane.bottomAnchor="220.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="550.0">
+         <font>
+            <Font name="Baskerville Old Face" size="20.0" />
+         </font>
+      </Label>
+      <VBox alignment="TOP_CENTER" layoutX="277.0" layoutY="600.0" prefHeight="181.0" prefWidth="428.0" spacing="15.0" style="-fx-background-color: cyan;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="600.0">
+         <padding>
+            <Insets right="10.0" top="15.0" />
+         </padding>
+         <children>
+            <Label alignment="TOP_CENTER" text="Opis znacenja karte">
+               <font>
+                  <Font name="Baskerville Old Face" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="cardValueDescription" alignment="TOP_CENTER" maxWidth="300.0" text="Na potezu je igrac broj 2, figura tri prelazi tri polja, pomjera se sa pozicije 4 na 28" wrapText="true">
+               <font>
+                  <Font name="Baskerville Old Face" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <ScrollPane hbarPolicy="NEVER" layoutX="433.0" layoutY="330.0" prefHeight="180.0" prefWidth="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="600.0">
+         <padding>
+            <Insets left="5.0" top="5.0" />
+         </padding>
+         <content>
+            <VBox fx:id="gameFilesList" prefHeight="180.0" prefWidth="250.0" style="-fx-background-color: cyan;">
+               <children>
+                  <Label text="igraBroj1.txt">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="igraBroj1.txt">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="igraBroj1.txt">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="igraBroj1.txt">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="igraBroj1.txt">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="igraBroj1.txt">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label text="igraBroj1.txt">
+                     <font>
+                        <Font name="Baskerville Old Face" size="22.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="5.0" top="5.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <GridPane fx:id="mapGridPane" gridLinesVisible="true" layoutX="306.0" layoutY="180.0" prefHeight="370.0" prefWidth="402.0" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="180.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="497.0" prefWidth="704.0" rotate="19.7" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unibl.etf.controller.AnimationController">
+   <children>
+      <ImageView id="flip-card-container" fx:id="imageView" fitHeight="335.0" fitWidth="305.0" layoutX="230.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="S_RESIZE" />
+         </cursor>
+      </ImageView>
+      <Button id="#button" fx:id="myButton" layoutX="51.0" layoutY="432.0" mnemonicParsing="false" onAction="#rotateImage" text="Button" />
+      <Button id="#button" fx:id="myButton1" layoutX="185.0" layoutY="432.0" mnemonicParsing="false" onAction="#rotateImageNina1" text="Button1" />
+      <ImageView id="flip-card-container" fx:id="imageView2" fitHeight="335.0" fitWidth="305.0" layoutX="230.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="S_RESIZE" />
+         </cursor>
+      </ImageView>
+      <Button id="#button" fx:id="myButton2" layoutX="270.0" layoutY="432.0" mnemonicParsing="false" onAction="#rotateImageNina2" text="Button2" />
+   </children>
+   <rotationAxis>
+      <Point3D y="1.0" />
+   </rotationAxis>
+</AnchorPane>
