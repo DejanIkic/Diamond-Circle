@@ -43,8 +43,6 @@ public class InputPlayersController {
     private static ArrayList<String> names = new ArrayList<>();
 
 
-
-
     @FXML
     private Button startButton;
 
@@ -52,32 +50,35 @@ public class InputPlayersController {
     private VBox vBoxList;
 
 
-
     @FXML
     void showSimulation(ActionEvent event) {
         int nOP = homePageController.getNumberOfPlayers();
+        Simulation.clearPlayerList();
+        int i;
+            for ( i = 0; i < nOP; i++) {
+                HBox temp = (HBox) vBoxList.getChildren().get(i);
+                ObservableList<Node> x = temp.getChildren();
+                //Label l = (Label) x.get(0);
+                TextField tf = (TextField) x.get(1);
+                try {
+                    Simulation.addPlayer(new Player(tf.getText()));
 
-        for (int i = 0; i < nOP; i++) {
-            HBox temp = (HBox) vBoxList.getChildren().get(i);
-            ObservableList<Node> x = temp.getChildren();
-            //Label l = (Label) x.get(0);
-            TextField tf = (TextField) x.get(1);
-            try {
-                Simulation.addPlayer(new Player(tf.getText()));
-            } catch (WrongNameException e) {
-                //System.out.println("Imena moraju biti jedinstvena, unesite imena ponovo!");
-                Alert warningAlert = new Alert(Alert.AlertType.WARNING);
-                warningAlert.setTitle("Pogresno ime!");
-                warningAlert.setContentText("Imena moraju biti jedinstvena, unesite imena ponovo!");
-                warningAlert.show();
-                Simulation.clearPlayerList();
+                } catch (WrongNameException e) {
+                    //System.out.println("Imena moraju biti jedinstvena, unesite imena ponovo!");
+                    Alert warningAlert = new Alert(Alert.AlertType.WARNING);
+                    warningAlert.setTitle("Pogresno ime!");
+                    warningAlert.setContentText("Imena moraju biti jedinstvena, unesite imena ponovo!");
+                    warningAlert.show();
+                    Simulation.clearPlayerList();
+                    return;
+                }
             }
-        }
+
 
         try {
-            ((Node)event.getSource()).getScene().getWindow().hide();
+            ((Node) event.getSource()).getScene().getWindow().hide();
             Parent root = FXMLLoader.load(getClass().getResource(SIMULATION_FXML));
-            Stage s=new Stage();
+            Stage s = new Stage();
             Scene myScene = new Scene(root);
             s.setScene(myScene);
             s.initOwner(startButton.getScene().getWindow());
@@ -100,7 +101,7 @@ public class InputPlayersController {
 
         for (int i = 0; i < NOPlayers; i++) {
             hBoxArray[i] = new HBox();
-            hBoxArray[i].setPadding( new Insets(5));
+            hBoxArray[i].setPadding(new Insets(5));
             hBoxArray[i].setAlignment(Pos.CENTER);
             Label l = new Label("Igrac " + (i + 1));
             TextField tf = new TextField();
@@ -116,20 +117,26 @@ public class InputPlayersController {
 
     }
 
-    /** ________________________GETERS___________________________*/
+    /**
+     * ________________________GETERS___________________________
+     */
     public static Dimension getGameDimensions() {
         return gameDimensions;
     }
+
     public static int getNumberOfPlayers() {
         return numberOfPlayers;
     }
     /** ________________________GETERS___________________________*/
     /** _________________________________________________________*/
-    /** ________________________SETERS___________________________*/
+    /**
+     * ________________________SETERS___________________________
+     */
 
     public void setGameDimensions(Dimension gameDimensions) {
         InputPlayersController.gameDimensions = gameDimensions;
     }
+
     public static void setNumberOfPlayers(int numberOfPlayers) {
         InputPlayersController.numberOfPlayers = numberOfPlayers;
     }

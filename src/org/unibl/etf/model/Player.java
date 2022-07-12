@@ -25,7 +25,11 @@ public class Player {
     }
 
     public Player(String name) throws WrongNameException {
-        if (names.contains(name)) throw new WrongNameException();
+
+        if (names.contains(name)) {
+            names.clear();
+            throw new WrongNameException();
+        }
         names.add(name);
         this.name = name;
 
