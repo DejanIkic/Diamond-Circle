@@ -16,10 +16,7 @@ import org.unibl.etf.enums.Dimension;
 import org.unibl.etf.model.Figure;
 import org.unibl.etf.model.Player;
 
-
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class Simulation {
 
@@ -33,7 +30,6 @@ public class Simulation {
     private static int numberOfFieldsToPass;
     public static final String TITLE = "DiamondCircle";
     public static boolean stop;
-    public static Object [][] map;
 
     public static void initCardDescription() {
     }
@@ -43,7 +39,6 @@ public class Simulation {
     }
 
     public static void initPlayerList() {
-        playersList.sort(Comparator.comparingInt(Player::getOrdinalNumber));
         HBox temp = controller.getListOfPlayers();
         temp.getChildren().clear();
         for (Player value : playersList) {
