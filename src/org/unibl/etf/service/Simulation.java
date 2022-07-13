@@ -1,17 +1,25 @@
 package org.unibl.etf.service;
 
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.control.ContentDisplay;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import org.unibl.etf.controller.HomePageController;
 import org.unibl.etf.controller.InputPlayersController;
 import org.unibl.etf.controller.SimulationController;
 import org.unibl.etf.enums.Dimension;
+import org.unibl.etf.model.Figure;
 import org.unibl.etf.model.Player;
 
+
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class Simulation {
 
@@ -34,6 +42,7 @@ public class Simulation {
     }
 
     public static void initPlayerList() {
+        playersList.sort(Comparator.comparingInt(Player::getOrdinalNumber));
         HBox temp = controller.getListOfPlayers();
         temp.getChildren().clear();
         for (Player value : playersList) {
@@ -46,9 +55,6 @@ public class Simulation {
         controller.setListOfPlayers(temp);
     }
 
-    public static void initPlayersFigures() {
-
-    }
 
     public static void initPauseContinueButton() {
 
@@ -63,7 +69,18 @@ public class Simulation {
 
     }
 
-    class FigureButton extends Button {
+    public static void initPlayersFigures() {
+        VBox temp = controller.getFiguresVBox();
+        temp.getChildren().clear();
+        for (Player player : playersList) {
+            for (Figure figure : player.getFigureList()) {
+                FigureButton figureButton = new FigureButton(player, figure);
+                temp.getChildren().add(figureButton);
+            }
+        }
+    }
+
+    static class FigureButton extends Button {
         //private String playerNumber;
 
         private String figureNumber;
@@ -73,17 +90,25 @@ public class Simulation {
             super();
             //playerNumber="";
             figureNumber = "";
-            //prefHeight()
+            setPadding(new Insets(0, 5, 0, 5));
+        }
+
+        public FigureButton(Player player, Figure figure) {
+            this.player = player;
+
+            setText("Igrac " + (this.player.getOrdinalNumber() + 1) + "  figura " +
+                    (player.getFigureList().indexOf(figure)+1));
+            ImageView temp = figure.getIcon();
+            this.setContentDisplay(ContentDisplay.RIGHT);
+            //temp.resize(30, 30);
+            this.setGraphic(temp);
 
         }
 
         public FigureButton(Player player) {
 
         }
-
-
     }
-
 
     private void addVBoxFields(int dimensions) {
 
@@ -101,9 +126,9 @@ public class Simulation {
         Simulation.controller = controller;
     }
 
-     public static void setInputPlayersController(InputPlayersController inputPlayersController) {
-         Simulation.inputPlayersController = inputPlayersController;
-     }
+    public static void setInputPlayersController(InputPlayersController inputPlayersController) {
+        Simulation.inputPlayersController = inputPlayersController;
+    }
 
     public static void setHomePageController(HomePageController homePageController) {
         Simulation.homePageController = homePageController;

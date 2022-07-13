@@ -66,10 +66,10 @@ public class SimulationController implements Initializable {
         numberOfPlayers = homePageController.getNumberOfPlayers();
         gameDimensions = homePageController.getDimensionChoiceBox();
 
-        //Simulation.ininCard();
+        //Simulation.initCard();
         //Simulation.initCardDescription();
         Simulation.initPlayerList();
-        //Simulation.initPlayersFigures();
+        Simulation.initPlayersFigures();
         //Simulation.initMap();
         //Simulation.initPauseContinueButton();
 

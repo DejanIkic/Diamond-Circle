@@ -10,9 +10,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unibl.etf.controller.SimulationController">
+<AnchorPane prefHeight="840.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.unibl.etf.controller.SimulationController">
    <children>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1000.0" spacing="120.0" style="-fx-border-color: BLACK;" AnchorPane.bottomAnchor="700.0">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="1000.0" spacing="120.0" style="-fx-border-color: BLACK;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="currentNOPlayedGames" alignment="CENTER" text="Trenutan broj odigranih igara: 10" textAlignment="CENTER" wrapText="true">
                <font>
@@ -43,7 +43,7 @@
             </Button>
          </children>
       </HBox>
-      <HBox fx:id="listOfPlayers" alignment="CENTER" layoutY="100.0" prefWidth="1000.0" spacing="30.0" style="-fx-border-color: BLACK; -fx-background-color: #aaa;" AnchorPane.bottomAnchor="650.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
+      <HBox fx:id="listOfPlayers" alignment="CENTER" layoutY="100.0" prefWidth="1000.0" spacing="30.0" style="-fx-border-color: BLACK; -fx-background-color: #aaa;" AnchorPane.bottomAnchor="690.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="110.0">
          <children>
             <Label text="Igrac 1">
                <font>
@@ -253,7 +253,7 @@
             <Insets left="10.0" top="10.0" />
          </padding>
       </VBox>
-      <Pane layoutX="740.0" layoutY="160.0" prefHeight="370.0" prefWidth="250.0" style="-fx-background-color: #f1f1f1;" AnchorPane.leftAnchor="740.0" AnchorPane.topAnchor="160.0">
+      <Pane layoutX="740.0" layoutY="160.0" prefHeight="370.0" prefWidth="250.0" style="-fx-background-color: #f1f1f1;" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="160.0">
          <children>
             <Label layoutX="54.0" layoutY="33.0" text="Trenutna karta">
                <font>
@@ -267,12 +267,12 @@
             </ImageView>
          </children>
       </Pane>
-      <Label fx:id="timeSinceStartOfGame" layoutX="767.0" layoutY="550.0" prefHeight="30.0" style="-fx-background-color: #ab9;" text="Vrijeme trajanja igre: 10s" textAlignment="CENTER" AnchorPane.bottomAnchor="220.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="550.0">
+      <Label fx:id="timeSinceStartOfGame" layoutX="767.0" layoutY="550.0" prefHeight="30.0" style="-fx-background-color: #ab9;" text="Vrijeme trajanja igre: 10s" textAlignment="CENTER" AnchorPane.bottomAnchor="210.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="550.0">
          <font>
             <Font name="Baskerville Old Face" size="20.0" />
          </font>
       </Label>
-      <VBox alignment="TOP_CENTER" layoutX="277.0" layoutY="600.0" prefHeight="181.0" prefWidth="428.0" spacing="15.0" style="-fx-background-color: cyan;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="600.0">
+      <VBox alignment="TOP_CENTER" layoutX="277.0" layoutY="600.0" prefHeight="181.0" prefWidth="428.0" spacing="15.0" style="-fx-background-color: cyan;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="270.0" AnchorPane.rightAnchor="270.0" AnchorPane.topAnchor="650.0">
          <padding>
             <Insets right="10.0" top="15.0" />
          </padding>
@@ -289,7 +289,7 @@
             </Label>
          </children>
       </VBox>
-      <ScrollPane hbarPolicy="NEVER" layoutX="433.0" layoutY="330.0" prefHeight="180.0" prefWidth="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="600.0">
+      <ScrollPane hbarPolicy="NEVER" layoutX="433.0" layoutY="330.0" prefHeight="180.0" prefWidth="250.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="650.0">
          <padding>
             <Insets left="5.0" top="5.0" />
          </padding>
@@ -338,10 +338,12 @@
             </VBox>
          </content>
       </ScrollPane>
-      <GridPane fx:id="mapGridPane" gridLinesVisible="true" layoutX="306.0" layoutY="180.0" prefHeight="370.0" prefWidth="402.0" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="305.0" AnchorPane.topAnchor="180.0">
+      <GridPane fx:id="mapGridPane" gridLinesVisible="true" layoutX="302.0" layoutY="187.0" maxHeight="450.0" maxWidth="450.0" prefHeight="429.0" prefWidth="397.0" AnchorPane.leftAnchor="302.0" AnchorPane.rightAnchor="301.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />

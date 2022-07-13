@@ -80,6 +80,7 @@ public class InputPlayersController {
             Parent root = FXMLLoader.load(getClass().getResource(SIMULATION_FXML));
             Stage s = new Stage();
             Scene myScene = new Scene(root);
+            s.setResizable(false);
             s.setScene(myScene);
             s.initOwner(startButton.getScene().getWindow());
             s.initModality(Modality.APPLICATION_MODAL);

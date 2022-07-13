@@ -14,12 +14,20 @@ public class OrdinaryFigure extends Figure {
         super();
     }
 
+    @Override
+    protected Void call() throws Exception {
+        return null;
+    }
+
     public OrdinaryFigure(Color color) {
         super(color);
         String colorNameLowerCase = color.toString().toLowerCase();
         String imageURL = imageFolderURL + "/" + colorNameLowerCase + "Standard.png";
         Image t = new Image(imageURL);
         icon = new ImageView(t);
+        icon.resize(20, 20);
+        icon.setFitWidth(29);
+        icon.setFitHeight(29);
     }
 
     @Override

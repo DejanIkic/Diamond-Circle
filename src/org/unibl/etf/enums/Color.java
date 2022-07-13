@@ -13,6 +13,12 @@ public enum Color {
         this.RGBValue=s;
     }
 
+    public static void clearLock(){
+        RED.lock=false;
+        BLUE.lock=false;
+        GREEN.lock=false;
+        YELLOW.lock=false;
+    }
     public boolean getLock(){
         return this.lock;
     }

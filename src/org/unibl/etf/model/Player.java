@@ -1,7 +1,9 @@
 package org.unibl.etf.model;
 
+import org.unibl.etf.controller.InputPlayersController;
 import org.unibl.etf.enums.Color;
 import org.unibl.etf.exception.WrongNameException;
+import org.unibl.etf.service.Simulation;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,13 +13,16 @@ import java.util.Scanner;
 public class Player {
 
     private String name;
-    private Color color;
-    private static ArrayList<String> names = new ArrayList<String>(4);
-    private ArrayList<Figure> figureList = new ArrayList<>(4);
+    private final Color color;
+    private static final ArrayList<String> names = new ArrayList<String>(4);
+    private static final ArrayList<Integer> orderOfPlay= new ArrayList<>(4);
+    private final ArrayList<Figure> figureList = new ArrayList<>(4);
+    private int ordinalNumber; //redni broj igraca u simulaciji
 
     public Player() {
         this.name = "";
         this.color = null;
+        ordinalNumber=0;
     }
 
     public Color getColor() {
@@ -28,7 +33,17 @@ public class Player {
 
         if (names.contains(name)) {
             names.clear();
+            orderOfPlay.clear();
+            Color.clearLock();
             throw new WrongNameException();
+        }
+        while(true) {
+            int x = (int) (Math.random() * InputPlayersController.getNumberOfPlayers());
+            if(!orderOfPlay.contains(x)) {
+                this.ordinalNumber = x;
+                orderOfPlay.add(x);
+                break;
+            }
         }
         names.add(name);
         this.name = name;
@@ -51,21 +66,7 @@ public class Player {
 
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Color getBoja() {
-        return color;
-    }
-
-    public static ArrayList<String> getNames() {
-        return names;
-    }
 
    /* public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -102,6 +103,31 @@ public class Player {
         };
     }
 
+    public int getOrdinalNumber() {
+        return ordinalNumber;
+    }
+    public ArrayList<Figure> getFigureList() {
+        return figureList;
+    }
+    public void setOrdinalNumber(int ordinalNumber) {
+        this.ordinalNumber = ordinalNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Color getBoja() {
+        return color;
+    }
+
+    public static ArrayList<String> getNames() {
+        return names;
+    }
 }
 
 
