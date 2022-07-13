@@ -15,10 +15,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Background;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.unibl.etf.enums.Dimension;
@@ -28,10 +26,7 @@ import org.unibl.etf.service.Simulation;
 
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.ResourceBundle;
 
 public class InputPlayersController {
 
@@ -80,6 +75,7 @@ public class InputPlayersController {
             Parent root = FXMLLoader.load(getClass().getResource(SIMULATION_FXML));
             Stage s = new Stage();
             Scene myScene = new Scene(root);
+            s.setResizable(false);
             s.setScene(myScene);
             s.initOwner(startButton.getScene().getWindow());
             s.initModality(Modality.APPLICATION_MODAL);
